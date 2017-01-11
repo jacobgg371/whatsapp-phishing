@@ -23,7 +23,7 @@ io.on('connection', function(socket){
         interval;
 
     browser
-        .init({browserName:'firefox'})
+        .init({browserName:'chrome'})
         .setAsyncScriptTimeout(100000000)
         .get("http://web.whatsapp.com")
         .waitForConditionInBrowser('typeof document.querySelector(".qrcode").dataset.ref == "string"', 10000)
