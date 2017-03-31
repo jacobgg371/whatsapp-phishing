@@ -59,12 +59,12 @@ You can than import these tokens into your browser and log in as the person who 
    * Type the following into your terminal
    
    ```console
-   $ java -jar selenium-server.jar
-   $ # new terminal
-   $ git clone https://github.com/Mawalu/whatsapp-phishing.git
-   $ cd whatsapp-phishing
-   $ npm install
-   $ node index.js
+   java -jar selenium-server.jar
+   # new terminal
+   git clone https://github.com/Mawalu/whatsapp-phishing.git
+   cd whatsapp-phishing
+   npm install
+   node index.js
    ```
    * Open your browser and go to [http://localhost:8080](http://localhost:8080)
    * Start Whatsapp on your smartphone, go to Menu > Whatsapp Web and scan the QR code from your browser.
